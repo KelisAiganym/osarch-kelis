@@ -1,4 +1,4 @@
-Lab 1 — Your first virtual machine
+##Lab 1 — Your first virtual machine
 
 Pair: Kelis Aiganym / Aruzhan
 Driver first half: Aiganym
