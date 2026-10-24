@@ -1,23 +1,20 @@
 Lab 1 — Your first virtual machine
 
 Pair: Kelis Aiganym / Aruzhan
-
 Driver first half: Aiganym
-
 Machine: Windows host, VirtualBox, Ubuntu Server 26.04.1 LTS guest
-
 Date: 25.10.2026
 
 What I did
-Installed VirtualBox.
+Installed VirtualBox
 Created VM lab01-ubuntu with 1 vCPU, 2 GB RAM, a 25 GB dynamically allocated VDI disk, and NAT networking.
 Installed Ubuntu Server 26.04.1 LTS and created a snapshot named clean-install.
-Broke the VM intentionally by deleting the /etc/hostname file:
-cat /etc/hostname — checked the hostname before making changes.
-sudo rm /etc/hostname — deleted the hostname file.
-cat /etc/hostname — confirmed that the file was missing.
-sudo reboot — restarted the virtual machine.
-hostname — checked the hostname after rebooting.
+Broke the VM intentionally: Broke the VM intentionally by deleting the /etc/hostname file:
+    cat /etc/hostname — checked the hostname before making changes.
+    sudo rm /etc/hostname — deleted the hostname file.
+    cat /etc/hostname — confirmed that the file was missing.
+    sudo reboot — restarted the virtual machine.
+    hostname — checked the hostname after rebooting.
 Restored the VM from the clean-install snapshot using VirtualBox's Snapshots menu. After the rollback, I logged in and ran cat /etc/hostname and hostname to verify that the original hostname had been restored.
 Resource justification
 
