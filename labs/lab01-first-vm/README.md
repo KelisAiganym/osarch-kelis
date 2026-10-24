@@ -1,8 +1,11 @@
 Lab 1 — Your first virtual machine
 
 Pair: Kelis Aiganym / Aruzhan
+
 Driver first half: Aiganym
+
 Machine: Windows host, VirtualBox, Ubuntu Server 26.04.1 LTS guest
+
 Date: 25.10.2026
 
 What I did
