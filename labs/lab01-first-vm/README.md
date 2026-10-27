@@ -38,12 +38,12 @@ The first time I tried to connect to the virtual machine using SSH, the connecti
 
 **EVIDENCE**
 
-evidence/ vm-settings.png — VM CPU, memory, and disk settings.
+evidence / vm-settings.png — VM CPU, memory, and disk settings.
 
-evidence/ guest-release.png — Ubuntu Server version information.
+evidence / guest-release.png — Ubuntu Server version information.
 
-evidence/ broken.png — the VM in its broken state.
+evidence / broken.png — the VM in its broken state.
 
-evidence/ snapshot-list.png — the clean-install snapshot after rollback.
+evidence / snapshot-list.png — the clean-install snapshot after rollback.
 
 evidence/ restored-after-rollback.png — additional screenshot of the restored VM.
