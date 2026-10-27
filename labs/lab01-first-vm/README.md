@@ -38,7 +38,7 @@ The first time I tried to connect to the virtual machine using SSH, the connecti
 
 **EVIDENCE**
 
-evidence/vm-settings.png — VM CPU, memory, and disk settings.
+    osarch-kelis/labs/lab01-first-vm/evidence/vm-settings.png — VM CPU, memory, and disk settings.
 
 evidence/guest-release.png — Ubuntu Server version information.
 
