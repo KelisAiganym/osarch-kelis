@@ -29,7 +29,11 @@ Restored the VM from the clean-install snapshot using VirtualBox's Snapshots men
 
 **RESOURCE JUSTIFICATION**
 
-I allocated 1 vCPU and 2 GB of RAM to the Ubuntu Server virtual machine. My Windows host has 6 CPU cores and 15 GB of RAM. I chose these settings to limit resource usage on my host while leaving enough resources for Windows and other applications to run smoothly. The virtual disk has a maximum size of 25 GB and is dynamically allocated, so it uses physical disk space as needed. The VM uses NAT networking to access the network through the host.
+I allocated 1 vCPU and 2 GB of RAM to the Ubuntu Server virtual machine. Although these are the default settings in VirtualBox, they are suitable for this lab because Ubuntu Server requires relatively few resources for basic installation, command-line operations, SSH access, and snapshot testing.
+
+My Windows host has 6 CPU cores and 16 GB of RAM. Allocating 1 vCPU and 2 GB of RAM provides sufficient resources for the guest operating system while leaving most of the CPU and memory available for Windows and other applications. This helps the host maintain good performance while running the virtual machine. Since the lab does not require a graphical desktop or resource-intensive applications, allocating more CPU cores or RAM is unnecessary.
+
+The virtual disk has a maximum size of 25 GB and is dynamically allocated, meaning it uses physical disk space as needed rather than reserving the entire 25 GB immediately. The VM uses NAT networking to access the network through the host without requiring a separate network configuration.
 
 **RESULT**
 
