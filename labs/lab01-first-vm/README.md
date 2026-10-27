@@ -1,8 +1,11 @@
 # Lab 1 — Your first virtual machine
 
 **Pair: Kelis Aiganym / Aruzhan**
+
 **Driver first half: Aiganym**
+
 **Machine: Windows host, VirtualBox, Ubuntu Server 26.04.1 LTS guest**
+
 **Date: 25.10.2026**
 
 **WHAT I DID**
@@ -37,8 +40,8 @@ The Ubuntu Server virtual machine boots successfully. I created the clean-instal
 The first time I tried to connect to the virtual machine using SSH, the connection was refused. I found that the OpenSSH server was not installed or running in the guest system. I fixed the issue by running sudo apt update and sudo apt install -y openssh-server, then checked the SSH connection again. After that, I was able to retrieve the Ubuntu version information from the guest.
 
 **EVIDENCE**
-evidence / vm-settings.png — VM CPU, memory, and disk settings.
-evidence / guest-release.png — Ubuntu Server version information.
-evidence / broken.png — the VM in its broken state.
-evidence / snapshot-list.png — the clean-install snapshot after rollback.
-evidence / restored-after-rollback.png — additional screenshot of the restored VM.
+<evidence/vm-settings.png> — VM CPU, memory, and disk settings.
+evidence/guest-release.png — Ubuntu Server version information.
+evidence/broken.png — the VM in its broken state.
+evidence/snapshot-list.png — the clean-install snapshot after rollback.
+evidence/restored-after-rollback.png — additional screenshot of the restored VM.
