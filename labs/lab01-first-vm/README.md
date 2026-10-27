@@ -35,13 +35,15 @@ I allocated 1 vCPU and 2 GB of RAM to the Ubuntu Server virtual machine. My Wind
 
 The Ubuntu Server virtual machine boots successfully. I created the clean-install snapshot before making changes, intentionally broke the VM, and restored it from the snapshot.
 
-**WHAT DID NOT WORK THE FIRST TIME**
+**WHAT DID NOT WORK**
 
-The first time I tried to connect to the virtual machine using SSH, the connection was refused. I found that the OpenSSH server was not installed or running in the guest system. I fixed the issue by running sudo apt update and sudo apt install -y openssh-server, then checked the SSH connection again. After that, I was able to retrieve the Ubuntu version information from the guest.
+The first time I tried to connect to the virtual machine using SSH, the connection was refused because the OpenSSH server was not installed or running in the guest system. I fixed this issue by running `sudo apt update` and `sudo apt install -y openssh-server`, then tested the SSH connection again. After that, I was able to retrieve the Ubuntu version information from the guest.
+
+Another issue occurred during the snapshot rollback. The clean-install snapshot was created at 18:32, one minute after `/etc/hostname` was deleted at 18:31. Therefore, this snapshot could not restore the VM to its original clean-install state. This showed that the snapshot needed to be created before making any changes to the system.
 
 **EVIDENCE**
 
-[evidence/vm-settings.png](evidence/vm-settings.png) - VM CPU, memory, and disk settings
+[evidence/vm-settings.png](evidence/vm-settings.png) - VM CPU, memory, and disk settings.
 
 [evidence/guest-release.png](evidence/guest-release.png) - Ubuntu Server version information.
 
