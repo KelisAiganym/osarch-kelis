@@ -1,7 +1,9 @@
 # Lab 2 — A Windows guest, and a network between them
 
 Pair: Aruzhan Amirgali / Aiganym Kelis
+
 Machine: host, Windows, 16 Gb RAM, 8 cores, guests Ubuntu Server + Windows 11 Enterprise eval
+
 Date: 25.10.2026
 
 ## What I did
