@@ -34,8 +34,8 @@ Date: 25.10.2026
 After switching the adapter to NAT Network in VirtualBox, running "ip -br a" in Ubuntu still displayed the old IP (10.0.2.15), and pings between the VMs failed with 100% packet loss. Turns out VirtualBox did not update the link state or release the cached DHCP lease while the VM was actively running. So I completely shut down Ubuntu, confirmed both VMs shared the same NAT Network profile, and powered Ubuntu back on to receive the correct IP (10.0.2.5)
 
 ## Evidence
-- [evidence/ipconfig-windows.txt](evidence/ipconfig-windows.txt) — Windows address
-- [evidence/ip-addr-linux.txt](evidence/ip-addr-linux.txt) — Ubuntu address
-- [evidence/ping-both-ways.txt](evidence/ping-both-ways.txt) — both directions and the internet
-- [evidence/host-memory-before.png](evidence/host-memory-before.png) — host memory, guests off
-- [evidence/host-memory-after.png](evidence/host-memory-after.png) — host memory, both guests overcommitted
+- [evidence/ipconfig-windows.txt](evidance/ipconfig-windows.txt) — Windows address
+- [evidence/ip-addr-linux.txt](evidance/ip-addr-linux.txt) — Ubuntu address
+- [evidence/ping-both-ways.txt](evidance/ping-both-ways.txt) — both directions and the internet
+- [evidence/host-memory-before.png](evidance/host-memory-before.png) — host memory, guests off
+- [evidence/host-memory-after.png](evidance/host-memory-after.png) — host memory, both guests overcommitted
