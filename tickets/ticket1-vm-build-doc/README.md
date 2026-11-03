@@ -1,9 +1,7 @@
 
 # Ticket 1 — VM Build Document
 
-**Course:** Operating System Architecture  
-**Student:** Kelis Aiganym  
-**Repository:** osarch-kelis  
+**Student:** Kelis Aiganym   
 **Host operating system:** Windows  
 **Host RAM:** 16 GB  
 **Host CPU:** 6 cores  
