@@ -1,4 +1,3 @@
-
 # Ticket 1 — VM Build Document
 
 **Student:** Kelis Aiganym   
