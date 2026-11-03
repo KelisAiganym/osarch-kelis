@@ -7,82 +7,123 @@ Linux Guest: Ubuntu Server 26.04.1 LTS
 Windows Guest: Windows 11 Enterprise Evaluation
 
 1. What Was Asked
-
-Original request
+1.1 Original Support Request
 
 From: Aigerim T. (Office Manager)
 Subject: test machine for new dev
 
 Hi, we have someone starting on Monday and he needs a test computer set up. Nothing special, just so he can try things without breaking anything. Can you write down how to do it so I can do the next one myself? Thanks
 
-The requester needs a safe testing environment for a new developer and documentation that another employee can follow to recreate it.
+The requester needs a safe testing environment for a new developer and instructions that another employee can follow to recreate the same environment independently.
+
+The expected result is a repeatable virtual machine setup that allows software testing without directly modifying the host operating system.
 
 2. What Was Actually Needed
 
-The original request does not contain enough technical information to build a complete and reliable testing environment.
+The original request is incomplete because it describes the desired result without specifying the technical requirements necessary to build and reproduce the environment.
 
-Information missing from the request:
+2.1 Information Missing from the Request
 
-Available RAM, CPU resources and physical disk space on the host.
-Required Linux distribution and Windows version.
-Whether both operating systems must run simultaneously.
-Whether both guests require internet access.
-Whether the guests must communicate with each other.
-Which virtualization platform should be used.
-How the environment should be restored after unsuccessful experiments.
-What software the developer will need to test.
+The request does not specify:
 
-Where the request was incorrect:
+Host hardware: Available RAM, CPU cores and free physical disk space.
+Operating systems: Which Linux distribution and Windows version are required.
+Virtualization platform: Whether VirtualBox, VMware or another hypervisor should be used.
+Networking: Whether the guests need internet access and communication with each other.
+Resource allocation: Whether both virtual machines must run simultaneously.
+Recovery: How to restore a guest after unsuccessful experiments.
+Windows licensing: Whether an evaluation version is acceptable.
+Developer workload: Which applications, programming tools and services must be tested.
+Security: Whether shared folders, clipboard sharing and other host integration features are required.
+2.2 Where the Request Was Incorrect
 
-The requester describes one test computer, but the assignment requires two separate guest operating systems: Linux and Windows. One guest alone would not provide the required cross-platform testing environment.
+The requester describes a single test computer. However, the actual assignment requires two separate guest operating systems: Linux and Windows.
 
-The phrase "without breaking anything" also creates an incorrect expectation. Virtual machines provide isolation, but they do not guarantee complete protection against incorrect configuration, unsafe shared folders or resource exhaustion.
+A single guest would not satisfy the cross-platform testing requirement.
 
-Questions I would have asked:
+The phrase "without breaking anything" is also misleading. Virtual machines provide isolation from the host, but they do not guarantee complete protection. Incorrect network settings, unsafe shared folders, excessive resource allocation and destructive operations can still cause problems.
 
-I would have asked about the developer's software requirements, available disk space, Windows licensing, expected workloads and network requirements.
+Therefore, the actual task is to create a documented, isolated and recoverable environment with two different operating systems, rather than simply create one virtual machine.
 
-Assumptions made instead of answers:
+2.3 Questions I Would Have Asked
 
-Missing information	Assumption
-Host specifications	Windows host with 16 GB RAM and 6 CPU cores, based on Lab 1
+Before starting, I would have asked the requester:
+
+Which development tools and applications will the new employee use?
+Does the employee need both Linux and Windows?
+Must both virtual machines run simultaneously?
+Do both guests need internet access?
+Must the guests communicate with each other?
+How much physical disk space is available?
+Is Windows Enterprise Evaluation sufficient for the intended testing period?
+2.4 Assumptions Made Instead of Answers
+
+Since the request did not contain these details, I made the following assumptions.
+
+Missing information	Assumption used
+Host hardware	Windows host with 16 GB RAM and 6 CPU cores, based on my completed Lab 1
 Hypervisor	Oracle VirtualBox
-Linux system	Ubuntu Server 26.04.1 LTS
-Windows system	Windows 11 Enterprise Evaluation
+Linux operating system	Ubuntu Server 26.04.1 LTS
+Windows operating system	Windows 11 Enterprise Evaluation
 Internet access	Required for both guests
-Guest communication	Required between both guests
-Recovery	Clean snapshots for both guests
-Intended use	Basic development and software testing
+Communication between guests	Required
+Recovery method	Separate clean snapshots for both guests
+Intended workload	Basic development and software testing
+Virtual disk type	Dynamically allocated
+Network mode	Shared NAT Network
 
-The Windows configuration is based on Lab 2, which was performed on my partner's computer. Its results are used as a technical reference, not as proof of installation on my own host.
+The host specifications are taken from my own Lab 1.
 
-Networking decision and alternatives:
+The Windows VM configuration is taken from Lab 2, which was performed on my partner's computer. I use this configuration as a technical reference, not as evidence that Windows has already been installed on my own computer.
 
-I selected NAT Network because it provides internet connectivity and communication between the guests.
+2.5 Technical Decisions and Alternatives
+Virtualization platform
 
-Standard NAT: Provides internet access but does not normally allow direct communication between separate guests.
-Bridged: Allows guests to appear as separate devices on the physical network, but may be restricted by university Wi-Fi.
-Host-Only: Allows private communication but does not provide internet access independently.
-NAT Network: Provides a practical balance between guest communication and internet connectivity.
+I selected Oracle VirtualBox because it was already used for my Ubuntu virtual machine in Lab 1. Using the same platform avoids introducing another hypervisor and makes the build process easier to reproduce.
+
+An alternative would be VMware. It provides similar virtualization functionality, but switching platforms would require recreating and documenting the environment.
+
+Network configuration
+
+I selected a shared NAT Network for the intended final configuration.
+
+Network mode	Advantages	Disadvantages
+Standard NAT	Provides internet access	Separate guests cannot normally communicate directly
+Bridged Adapter	Guests appear as separate devices on the physical network	May be restricted by university Wi-Fi or MAC filtering
+Host-Only Adapter	Allows private communication	Does not provide internet access independently
+NAT Network	Allows communication between guests and internet access	Requires both guests to use the same NAT Network
+
+NAT Network is the best compromise because it provides internet access and communication between the two guests without requiring them to appear as separate devices on the physical network.
+
+Disk allocation
+
+I selected dynamically allocated virtual disks instead of fixed-size disks.
+
+A dynamic disk uses physical storage as the guest requires it. A fixed-size disk reserves its full capacity immediately.
+
+The trade-off is that dynamic disks can grow over time, so the host must have sufficient free disk space.
+
 3. What I Did
 3.1 Host Inventory
 
-The host specifications were recorded during my completed Lab 1.
+I used the hardware information recorded during my completed Lab 1.
 
 Resource	Specification
-Operating system	Windows
+Host operating system	Windows
 RAM	16 GB
 CPU cores	6
 Hypervisor	Oracle VirtualBox
+Available physical disk space	Not recorded in Lab 1; must be checked before final installation
 
-Disk space: The available physical disk capacity was not recorded in Lab 1 and must be checked before completing the new installation.
+The host has 16 GB of RAM and 6 CPU cores. These figures provide the basis for allocating resources to the virtual machines.
 
-3.2 Linux Virtual Machine
+I did not invent a disk capacity because the available physical disk space was not recorded.
 
-I completed Lab 1 on my own computer and installed Ubuntu Server 26.04.1 LTS.
+3.2 Existing Linux Virtual Machine
 
-Existing VM configuration:
+I created and tested the Ubuntu Server VM during Lab 1 on my own computer.
 
+VM Configuration
 Setting	Configuration
 VM name	lab01-ubuntu
 Operating system	Ubuntu Server 26.04.1 LTS
@@ -91,15 +132,47 @@ RAM	2 GB
 Virtual disk	25 GB
 Disk allocation	Dynamically allocated
 Network	NAT
+Installation and Testing
 
-I verified that Ubuntu booted successfully, checked the operating system information, intentionally removed /etc/hostname and restored the system using a snapshot.
+During Lab 1, I:
 
-This exercise demonstrated virtual machine recovery and the importance of creating snapshots before making system changes.
+Installed Oracle VirtualBox.
+Created the lab01-ubuntu virtual machine.
+Allocated 1 vCPU and 2 GB RAM.
+Created a 25 GB dynamically allocated virtual disk.
+Configured NAT networking.
+Installed Ubuntu Server 26.04.1 LTS.
+Booted the guest and checked its operating system information.
+Tested system recovery using a snapshot.
+Recovery Experiment
+
+I intentionally modified the Ubuntu system by deleting its hostname file.
+
+Commands used:
+
+bash
+cat /etc/hostname
+sudo rm /etc/hostname
+cat /etc/hostname
+sudo reboot
+hostname
+
+
+This experiment demonstrated how destructive system changes can affect a guest operating system.
+
+An important problem occurred with snapshot timing. The snapshot named clean-install was created at 18:32, while the hostname file had been deleted at 18:31.
+
+Therefore, the snapshot was not a true pre-change recovery point. This showed that a clean snapshot must be created immediately after installation and initial configuration, before performing destructive experiments.
+
+The existing Lab 1 screenshots document the VM configuration, the modified state and the subsequent recovery attempt.
 
 3.3 Windows Virtual Machine
 
-The Windows configuration comes from Lab 2, completed as a paired exercise on my partner's computer.
+The Windows configuration is based on the paired Lab 2 exercise performed on my partner's computer.
 
+It is reference information and is not presented as a completed Windows installation on my own host.
+
+Reference Configuration
 Setting	Configuration
 VM name	lab02-windows
 Operating system	Windows 11 Enterprise Evaluation
@@ -110,89 +183,146 @@ Disk allocation	Dynamically allocated
 Firmware	UEFI
 Secure Boot	Enabled
 TPM	Virtual TPM
-Network	NAT Network
+Network	NAT Network in the intended configuration
 
-Official installation source:
+Official Windows evaluation download:
+
 https://www.microsoft.com/en-us/evalcenter/download-windows-11-enterprise
 
-This configuration is used as a reference for the Windows guest build.
+The evaluation version is suitable for a temporary testing environment. It is not a substitute for a permanent licensed Windows installation.
+
+The Windows VM must be created and verified on my own host before the build can be considered fully reproduced.
 
 3.4 Resource Allocation
 
-The host has 16 GB RAM and 6 CPU cores.
+The resource allocation is based on my own host specifications: 16 GB RAM and 6 CPU cores.
 
-Planned allocation:
-
+Planned Resource Allocation
 Component	RAM	CPU
-Windows host	10 GB remaining	3 cores remaining
+Windows host	Approximately 10 GB remaining before other application usage	3 cores remaining
 Ubuntu guest	2 GB	1 vCPU
 Windows guest	4 GB	2 vCPU
-Total	16 GB	6 cores
+Total guest allocation	6 GB	3 vCPU
 
-The guests receive 6 GB RAM in total, leaving approximately 10 GB for the host before additional application usage and virtualization overhead.
+The two guests receive 6 GB of RAM in total. This leaves approximately 10 GB for Windows before accounting for other applications and virtualization overhead.
 
-During Lab 2, assigning 10 GB RAM to each guest on a 16 GB host caused severe memory pressure. The computer became very slow, the mouse temporarily froze and opening Task Manager took approximately one minute.
+I selected 2 GB for Ubuntu because it is a lightweight server installation without a graphical desktop.
 
-I therefore selected a more conservative allocation of 2 GB for Ubuntu and 4 GB for Windows.
+I selected 4 GB for Windows because it is the minimum memory requirement for Windows 11, although additional memory may be necessary for heavier development workloads.
 
-Both virtual disks use dynamic allocation to avoid reserving their maximum capacity immediately.
+Why I Did Not Allocate More Memory
 
-3.5 Networking
+During Lab 2, my partner tested an overcommitted configuration with 10 GB RAM assigned to each guest on a 16 GB host.
 
-The intended network configuration uses one shared VirtualBox NAT Network.
+The results were poor:
 
-Both guests must use the same network profile.
+The host became extremely slow.
+The mouse froze periodically.
+Opening Task Manager took approximately one minute.
+Available physical memory dropped significantly.
 
-During Lab 2, Ubuntu initially retained its old IP address after changing the network adapter. Completely shutting down and restarting Ubuntu allowed it to obtain a new DHCP address.
+This demonstrated that assigning more memory to virtual machines does not automatically improve performance.
 
-Windows Defender Firewall also blocked incoming ICMP requests. The problem was resolved during Lab 2 by creating an inbound ICMPv4 firewall rule.
+I therefore chose a more conservative allocation rather than repeating the overcommitment problem.
 
-These experiences demonstrate why network connectivity must be tested instead of assumed.
+Both disks use dynamic allocation to avoid reserving their maximum capacity immediately. However, the actual free disk space must be checked before creating the Windows guest.
+
+3.5 Network Configuration
+
+The intended final configuration uses one shared VirtualBox NAT Network.
+
+Both virtual machines must use the same NAT Network profile.
+
+The expected result is:
+
+Ubuntu can access the internet.
+Windows can access the internet.
+Ubuntu can communicate with Windows.
+Windows can communicate with Ubuntu.
+Problems Observed During Lab 2
+
+Two networking problems occurred during the paired exercise.
+
+Problem 1 — Old IP address
+
+After changing Ubuntu's adapter to NAT Network, the guest initially retained its previous IP address.
+
+The problem was resolved by completely shutting down Ubuntu and starting it again. It then received a new DHCP address.
+
+Problem 2 — Windows Firewall
+
+Windows Defender Firewall blocked incoming ICMPv4 echo requests on the Public network profile.
+
+The issue was resolved during Lab 2 by creating an inbound firewall rule for ICMPv4.
+
+These problems demonstrate why network connectivity must be tested rather than assumed.
+
+The Lab 2 results are reference material because the exercise was performed on my partner's machine.
 
 3.6 Snapshots and Recovery
 
-Snapshots provide a recovery point before potentially destructive testing.
+Snapshots are necessary because the purpose of the environment is to allow a developer to experiment without permanently damaging the guest installation.
 
-During Lab 1, I discovered that a snapshot created after modifying the system could not restore the original clean state.
+I plan to create a separate clean snapshot for each guest.
 
-For this reason, the clean snapshot must be created immediately after installation and initial configuration, before experimental changes.
+The correct sequence is:
 
-A separate clean snapshot is required for each guest.
+Install the operating system.
+Complete initial configuration.
+Install necessary updates.
+Verify that the guest boots correctly.
+Create a snapshot named clean-install.
+Perform testing only after the snapshot has been created.
+
+The Lab 1 snapshot timing problem showed why this sequence matters.
+
+A snapshot created after a destructive modification cannot restore the system to a state that existed before that modification.
 
 4. Evidence
 
-The following evidence files are included in the Ticket 1 folder.
+The evidence is divided into files collected on my own computer, files available in the Ticket 1 folder and reference material from my partner's Lab 2.
 
-File	Purpose
-evidence/04-guest-uname.txt	Records Ubuntu kernel and operating system information.
-evidence/05-ping-between-guests.txt	Records internet and guest-to-guest connectivity tests.
+4.1 Ticket 1 Evidence
+File	What it proves
+evidence/04-guest-uname.txt	Records Ubuntu system and kernel information.
+evidence/05-ping-between-guests.txt	Records the network connectivity tests. The actual output must show the relevant successful tests to prove connectivity.
+4.2 Existing Lab 1 Evidence — My Own Computer
+File	What it proves
+labs/lab01-first-vm/evidence/vm-settings.png	Shows the CPU, RAM and virtual disk configuration of my Ubuntu VM.
+labs/lab01-first-vm/evidence/guest-release.png	Shows the Ubuntu operating system release.
+labs/lab01-first-vm/evidence/broken.png	Shows the intentionally modified Ubuntu system.
+labs/lab01-first-vm/evidence/snapshot-list.png	Shows the snapshot configuration and its timing.
+labs/lab01-first-vm/evidence/restored-after-rollback.png	Documents the Ubuntu recovery attempt after rollback.
+4.3 Existing Lab 2 Evidence — Partner's Computer
+File	What it proves
+labs/lab02-windows-vm/evidence/ipconfig-windows.txt	Records the Windows guest IP configuration.
+labs/lab02-windows-vm/evidence/ip-addr-linux.txt	Records the Linux guest IP configuration.
+labs/lab02-windows-vm/evidence/ping-both-ways.txt	Documents the communication tests between the two guests.
+labs/lab02-windows-vm/evidence/host-memory-before.png	Shows host memory usage before running both guests.
+labs/lab02-windows-vm/evidence/host-memory-after.png	Shows the memory pressure after running both guests.
 
-Additional evidence from Lab 1 — my own computer:
+These Lab 2 files are reference material from my partner's computer. They are not presented as proof of execution on my own host.
 
-File	What it demonstrates
-labs/lab01-first-vm/evidence/vm-settings.png	Ubuntu VM resource configuration.
-labs/lab01-first-vm/evidence/guest-release.png	Installed Ubuntu release.
-labs/lab01-first-vm/evidence/broken.png	Intentionally modified Ubuntu state.
-labs/lab01-first-vm/evidence/snapshot-list.png	Existing snapshot configuration.
-labs/lab01-first-vm/evidence/restored-after-rollback.png	Ubuntu recovery after snapshot rollback.
+4.4 Additional Evidence Required
 
-Reference evidence from Lab 2 — partner's computer:
+The following evidence is still necessary for a complete Ticket 1 submission:
 
-File	What it demonstrates
-labs/lab02-windows-vm/evidence/ipconfig-windows.txt	Windows IP configuration.
-labs/lab02-windows-vm/evidence/ip-addr-linux.txt	Linux IP configuration.
-labs/lab02-windows-vm/evidence/ping-both-ways.txt	Guest communication tests.
-labs/lab02-windows-vm/evidence/host-memory-before.png	Host memory before running both guests.
-labs/lab02-windows-vm/evidence/host-memory-after.png	Host memory pressure after running both guests.
+Required file	What it must prove
+evidence/01-new-vm-wizard.png	The Windows VM creation wizard and selected operating system.
+evidence/02-disk-settings.png	The Windows VM disk size and dynamic allocation.
+evidence/03-network-adapter.png	Both guests connected to the same NAT Network.
+evidence/06-snapshot-list.png	Clean snapshots for both guests.
 
-Evidence distinction: Lab 1 files are evidence from my own computer. Lab 2 files are reference material from my partner's computer and are not presented as my own execution results.
+These files must be collected from the actual VM configuration. Existing Lab 1 and Lab 2 screenshots must not be renamed or presented as new Ticket 1 evidence.
 
 5. What I Would Do Differently
 
-I would measure available disk space and actual memory usage before finalizing resource allocation. Lab 2 demonstrated that excessive memory allocation can make the host almost unusable.
+First, I would record the available physical disk space before selecting virtual disk sizes. In Lab 1, I recorded CPU and RAM but did not record the available disk capacity. This leaves an important part of the resource calculation incomplete.
 
-I would also create and verify clean snapshots immediately after installation. In Lab 1, incorrect snapshot timing prevented restoration to the intended original state.
+Second, I would create the clean snapshot immediately after installation and initial configuration. During Lab 1, the snapshot was created after the hostname file had already been deleted. This prevented it from serving as the intended original recovery point.
 
-Finally, I would ask another student to follow BUILD.md before submission. This would help identify unclear instructions and missing steps that are difficult for the original author to notice.
+Third, I would test the complete environment with both guests running simultaneously before finalizing the resource allocation. Lab 2 showed that excessive memory allocation can make the host almost unusable.
 
-Current status: Documentation prepared. Additional VM verification, evidence collection and peer review are required before final submission.
+Finally, I would ask another student to follow the BUILD.md instructions without additional explanations from me. This would reveal unclear steps, missing screenshots and assumptions that an inexperienced user might not understand.
+
+Submission status: The Ubuntu guest and its Lab 1 evidence are available on my own computer. The Windows configuration and networking results from Lab 2 are reference material from my partner's computer. The complete Ticket 1 build still requires local Windows VM verification, final evidence collection and independent peer review.
