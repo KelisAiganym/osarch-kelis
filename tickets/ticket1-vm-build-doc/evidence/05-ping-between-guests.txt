@@ -1,1 +1,8 @@
-
+wboxuser@Kelis: *$ ip -br addr
+1o
+UNKNOWN
+enp0s3
+UP
+127.0.0.1/8 :: 1/128
+10.0.2.15/24 metric 100 fd17:625c:f037:2:a00:27ff:fedc:e8cc/64 fe80::a00:27ff:fedc:e8cc/64
+boxuser@Kelis:~$
