@@ -19,7 +19,7 @@ Manufacturer: https://www.amd.com/en/products/processors/desktops/ryzen/7000-ser
 
 Intel Core i5-13400
 
-![Intel Core i5-13400](evidence/photos/intel Core i5-13400.jpg)
+![Intel Core i5-13400](evidence/photos/intel-core-i5-13400.jpg)
 
 Type: Desktop CPU.
 Socket: LGA1700.
@@ -36,7 +36,7 @@ Manufacturer: https://www.intel.com/content/www/us/en/products/sku/230495/intel-
 2. Motherboards
 ASUS PRIME B650M-A
 
-!ASUS PRIME B650M-A
+![ASUS PRIME B650M-A](evidence/photos/asus-prime-b650m-a.jpg)
 
 Type: Micro-ATX motherboard.
 Socket: AM5.
@@ -52,7 +52,7 @@ CPU support list: https://www.asus.com/motherboards-components/motherboards/prim
 
 MSI PRO B760M-A WIFI DDR4
 
-!MSI PRO B760M-A WIFI DDR4
+![MSI PRO B760M-A WIFI DDR4](evidence/photos/msi-pro-b760m-a-wifi-ddr4.jp.jpg)
 
 Type: Micro-ATX motherboard.
 Socket: LGA1700.
@@ -69,7 +69,7 @@ CPU support: https://www.msi.com/Motherboard/PRO-B760M-A-WIFI-DDR4/support
 3. Memory
 Kingston FURY Beast DDR5-5600, 16 GB
 
-!Kingston FURY Beast DDR5
+![Kingston FURY Beast DDR5](evidence/photos/kingston-fury-beast-ddr5.jpg)
 
 Type: DDR5 desktop memory.
 Capacity: 16 GB.
@@ -81,7 +81,7 @@ Manufacturer: https://www.kingston.com/ru/memory/gaming/kingston-fury-beast-ddr5
 
 Crucial DDR4-3200, 16 GB DIMM
 
-!Crucial DDR4 memory
+![Crucial DDR4 memory](evidence/photos/crucial-ddr4-3200.jpg)
 
 Type: DDR4 desktop memory.
 Capacity: 16 GB.
@@ -94,7 +94,7 @@ Manufacturer: https://www.crucial.com/
 4. Storage Devices
 Samsung 990 PRO 1 TB
 
-!Samsung 990 PRO
+![Samsung 990 PRO](evidence/photos/samsung-990-pro.jpg)
 
 Type: NVMe solid-state drive.
 Capacity: 1 TB.
