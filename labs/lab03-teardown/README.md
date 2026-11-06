@@ -108,7 +108,7 @@ Manufacturer: https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvm
 
 Samsung 870 EVO 1 TB
 
-!Samsung 870 EVO
+![Samsung 870 EVO](evidence/photos/samsung-870-evo.jpg)
 
 Type: SATA solid-state drive.
 Capacity: 1 TB.
@@ -123,7 +123,7 @@ Manufacturer: https://www.samsung.com/us/business/support/owners/product/870-evo
 5. Power Supply and Cooling
 Corsair RM750e (750 W)
 
-!Corsair RM750e
+![Corsair RM750e](evidence/photos/corsair-rm750e.jpg)
 
 Type: ATX power supply unit.
 Power output: 750 W.
@@ -135,7 +135,7 @@ Manufacturer: https://www.corsair.com/us/en/p/psu/cp-9020262-na/rme-series-rm750
 
 Stock CPU Cooler
 
-!AMD Wraith Stealth
+![AMD Wraith Stealth](evidence/photos/amd-wraith-stealth.jpg)
 
 Type: Air CPU cooler.
 Model: AMD Wraith Stealth.
