@@ -1,0 +1,28 @@
+﻿===== CPU =====
+
+Name                                           NumberOfCores NumberOfLogicalProcessors
+----                                           ------------- -------------------------
+11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz             6                        12
+
+
+===== MEMORY =====
+
+Manufacturer         Capacity Speed PartNumber          
+------------         -------- ----- ----------          
+Micron Technology 17179869184  3200 8ATF2G64HZ-3G2E2    
+
+
+===== TOTAL RAM =====
+
+TotalPhysicalMemory
+-------------------
+        16889303040
+
+
+===== DISKS =====
+
+Model                       Size InterfaceType
+-----                       ---- -------------
+INTEL SSDPEKNU512GZ 512105932800 SCSI         
+
+
