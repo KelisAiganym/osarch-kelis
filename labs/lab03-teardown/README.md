@@ -3,7 +3,7 @@ Part 1: Teardown on Paper
 1. Processors
 AMD Ryzen 5 7600
 
-!AMD Ryzen 5 7600
+![AMD Ryzen 5 7600](evidence/photos/amd-ryzen-5-7600.jpg)
 
 Type: Desktop CPU.
 Socket: AM5.
@@ -19,7 +19,7 @@ Manufacturer: https://www.amd.com/en/products/processors/desktops/ryzen/7000-ser
 
 Intel Core i5-13400
 
-!Intel Core i5-13400
+![Intel Core i5-13400](evidence/photos/Intel Core i5-13400.jpg)
 
 Type: Desktop CPU.
 Socket: LGA1700.
