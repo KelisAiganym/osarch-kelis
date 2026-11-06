@@ -19,7 +19,7 @@ Manufacturer: https://www.amd.com/en/products/processors/desktops/ryzen/7000-ser
 
 Intel Core i5-13400
 
-![Intel Core i5-13400](evidence/photos/Intel Core i5-13400.jpg)
+![Intel Core i5-13400](evidence/photos/intel Core i5-13400.jpg)
 
 Type: Desktop CPU.
 Socket: LGA1700.
