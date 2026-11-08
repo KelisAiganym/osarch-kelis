@@ -36,7 +36,7 @@
 
 ## Tool of the Week
 
-Week — `09.11.2026` - [Process Explorer: find which process is using a file](tool-of-the-week/process-explorer.md)
+Week — `09.11.2026` - [Process Explorer: find which process is using a file](tool%20of%20the%20week/process-explorer.md)
 
 ## Use of AI assistants
 
