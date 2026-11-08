@@ -45,6 +45,6 @@ Week __ — `____` : [tools/____.md](tools/)
 | | | |
 ## Tool of the Week
 
-- [Process Explorer: find which process is using a file](tools/process-explorer.md)
+- [Process Explorer: find which process is using a file](tool of the week/process-explorer.md)
 > Declaring this costs nothing. Not declaring it, when it comes up at the
 > defence, costs the assignment.
