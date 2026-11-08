@@ -43,6 +43,8 @@ Week __ — `____` : [tools/____.md](tools/)
 | Assignment | Tool | What for |
 |------------|------|----------|
 | | | |
+## Tool of the Week
 
+- [Process Explorer: find which process is using a file](tools/process-explorer.md)
 > Declaring this costs nothing. Not declaring it, when it comes up at the
 > defence, costs the assignment.
