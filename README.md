@@ -36,15 +36,12 @@
 
 ## Tool of the Week
 
-Week __ — `____` : [tools/____.md](tools/)
+Week — `09.11.2026` : - [Process Explorer: find which process is using a file](tool of the week/process-explorer.md)[tools/____.md](tools/)
 
 ## Use of AI assistants
 
 | Assignment | Tool | What for |
 |------------|------|----------|
 | | | |
-## Tool of the Week
-
-- [Process Explorer: find which process is using a file](tool of the week/process-explorer.md)
 > Declaring this costs nothing. Not declaring it, when it comes up at the
 > defence, costs the assignment.
