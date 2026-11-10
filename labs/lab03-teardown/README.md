@@ -52,7 +52,7 @@ CPU support list: https://www.asus.com/motherboards-components/motherboards/prim
 
 MSI PRO B760M-A WIFI DDR4
 
-![MSI PRO B760M-A WIFI DDR4](evidence/photos/msi-pro-b760m-a-wifi-ddr4.jp.jpg)
+![MSI PRO B760M-A WIFI DDR4](evidence/photos/msi-pro-b760m-a-wifi-ddr4.jpg)
 
 Type: Micro-ATX motherboard.
 Socket: LGA1700.
