@@ -1,18 +1,49 @@
 boxuser@kelis:*$ free -h
-total
-Mem:
-Swap: wboxuser@Kelis:~$
-1.6G1
-0B
-- used
-426Mi
-0B
-free
-422Mi
-- OB
-shared
-buff/cache
-1. 1Mi
-984M1
-available
-1.2Gi
+                 total       - used     free      shared        buff/cache      available
+Mem:             1.6G1        426Mi     422Mi     1. 1Mi        984M1           1.2Gi
+Swap:            0B           0B        OB
+wboxuser@Kelis:~$ 
+
+boxuser@Kelis:~$ lsblk -o NAME,MODEL,SIZE,TYPE
+NAME   MODEL           SIZE   TYPE
+loop0                  66.8M  loop
+loop1                  1.5M   loop
+loop2                  50.1M  loop
+loop3                  1.5M   loop
+loop4                  66.8M  loop
+sda    VBOX HARDDISK   25G    disk
+sda1                   1M     part
+sda2                   25G    part
+sr0    VBOX CD-ROM     1024M  rom
+boxuser@Kelis:~$
+
+boxuser@Kelis:~$ lscpu
+CPU op-mode(s):           32-bit, 64-bit
+Address sizes:            39 bits physical, 48 bits virtual
+Byte Order:               Little Endian
+CPU(s):                   1
+On-line CPU(s) list:      0
+Vendor ID:                GenuineIntel
+Model name:               11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+CPU family:               6
+Model:                    141
+Thread(s) per core:       1
+Core(s) per socket:       1
+Socket(s):                1
+Stepping:                 1
+BogoMIPS:                 5376.00
+Flags:                    tpu vme de pse tsc msr pae mce cx8 apic. sep-mtrr pge mca cmov pat psess clflush mmx fxsr sse sse2 ht syscall nx ratscp im co tsc                                  rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pelmulada monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic opcnt aes xsave                            avx f16c rdrand hypervisor lahf_lm abm 3dnouprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt.s rat md_clear flush_11d                                arch_capabilities
+
+Virtualization features:
+Hypervisor vendor:        KVM
+Virtualization type:      full
+Caches (sum of all):
+L1d:                      48 KiB (1 instance)
+L1i:                      32 KiB (1 instance)
+L2:                       1.3 MiB (1 instance)
+L3:                       12 MiB (1 instance)
+NUMA:                     1
+NUMA node(s):             0
+Vulnerabilities:
+[Results preserved from the available screenshot text]
+boxuser@Kelis:~$
