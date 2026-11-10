@@ -45,5 +45,22 @@ L3:                       12 MiB (1 instance)
 NUMA:                     1
 NUMA node(s):             0
 Vulnerabilities:
-[Results preserved from the available screenshot text]
+Gather data sampling:       Unknown: Dependent on hypervisor status
+Ghostwrite:                 Not affected
+Indirect target selection:  Mitigation; Aligned branch/return thunks
+Itlb multihit:              Not affected
+L1tf:                       Not affected
+Mds:                        Not affected
+Meltdown:                   Not affected
+Mmio stale data:            Not affected
+Old microcode:              Not affected
+Reg file data sampling:     Not affected
+Retbleed:                   Not affected
+Spec rstack overflow:       Not affected
+Spec store bypass:          Vulnerable
+Spectre v1:                 Mitigation; user pointer sanitization
+Spectre v2:                 Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+Srbds:                      Not affected
+Tsx async abort:            Not affected
+Vmscape:                    Not affected
 boxuser@Kelis:~$
