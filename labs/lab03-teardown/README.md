@@ -89,8 +89,7 @@ Speed: 3200 MT/s.
 Connection: Installs into a 288-pin DDR4 DIMM motherboard slot.
 Limitation: Only compatible with DDR4 motherboards. It is not compatible with DDR5 slots.
 
-Manufacturer: https://www.crucial.com/
-
+Manufacturer: https://www.bhphotovideo.com/c/product/1576444-REG/crucial_ct16g4dfra32a_16gb_ddr4_3200_mt_s.html
 4. Storage Devices
 Samsung 990 PRO 1 TB
 
