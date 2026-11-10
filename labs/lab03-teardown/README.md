@@ -1,5 +1,5 @@
-##Lab 3 — Teardown, and the Same Machine from the Command Line
-##Part 1: Teardown on Paper
+#Lab 3 — Teardown, and the Same Machine from the Command Line
+#Part 1: Teardown on Paper
 1. Processors
 AMD Ryzen 5 7600
 
