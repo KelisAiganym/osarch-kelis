@@ -1,10 +1,13 @@
-Evidence: This output confirms the Ubuntu guest
-kernel information and architecture.
-
-Command:
+Commands:
 uname -a
+lsb_release -a
 
 Output:
-vboxuser Kelis:~$ uname -a
-Linux Kelis 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 4 09:10:14 UTC 2026 x86_64 GNU/Linux
-boxuser@elis: *$
+Linux Kelis 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 4 09:10:14 
+UTC 2026 x86_64 GNU/Linux
+
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description: Ubuntu 26.04.1 LTS
+Release: 26.04
+Codename: resolute
