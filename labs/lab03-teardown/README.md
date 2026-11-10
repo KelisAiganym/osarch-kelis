@@ -204,6 +204,12 @@ Important Note About Linux Virtual Machines
 
 If Linux is running inside a virtual machine, the commands describe the virtual hardware presented to the guest operating system, not necessarily the physical computer's actual processor, RAM or disk.
 
+What did not work the first time
+
+My laptop runs Windows as its main operating system, and I use a Linux virtual machine to demonstrate Linux commands and system specifications.
+
+I was unable to demonstrate the macOS commands directly because I do not have enough free storage space on my laptop to install an additional macOS virtual machine. Most of the available storage is already being used by the Linux virtual machine.
+
 Evidence Files
 
 Save the actual command output in these files:
