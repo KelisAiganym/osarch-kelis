@@ -1,5 +1,5 @@
-#Lab 3 — Teardown, and the Same Machine from the Command Line
-#Part 1: Teardown on Paper
+# Lab 3 — Teardown, and the Same Machine from the Command Line
+## Part 1: Teardown on Paper
 1. Processors
 AMD Ryzen 5 7600
 
@@ -151,7 +151,7 @@ Manufacturer references: https://www.amd.com/en/products/processors/desktops/ryz
 
 https://www.intel.com/content/www/us/en/support/articles/000089190/processors/intel-core-processors.html
 
-##Part 2: Two Working Computer Builds
+## Part 2: Two Working Computer Builds
 Build 1 — AMD System
 Component	Model	Reason
 CPU	AMD Ryzen 5 7600	AM5 processor supported by the motherboard
@@ -187,7 +187,7 @@ Additional graphics card if more graphics performance is required.
 
 The Intel Core i5-13400 includes Intel UHD Graphics 730, so a dedicated graphics card is not required for basic display output.
 
-##Part 3: Reading Hardware Specifications from the Command Line
+## Part 3: Reading Hardware Specifications from the Command Line
 
 The goal is to obtain processor, memory and storage information using commands in different operating systems.
 
@@ -204,13 +204,13 @@ Important Note About Linux Virtual Machines
 
 If Linux is running inside a virtual machine, the commands describe the virtual hardware presented to the guest operating system, not necessarily the physical computer's actual processor, RAM or disk.
 
-##What did not work the first time
+## What did not work the first time
 
 My laptop runs Windows as its main operating system, and I use a Linux virtual machine to demonstrate Linux commands and system specifications.
 
 I was unable to demonstrate the macOS commands directly because I do not have enough free storage space on my laptop to install an additional macOS virtual machine. Most of the available storage is already being used by the Linux virtual machine.
 
-##Evidence Files
+## Evidence Files
 
 Save the actual command output in these files:
 
@@ -220,7 +220,7 @@ evidence/macos-specs.txt (if a Mac is available)
 
 The output must be generated on the actual machines.
 
-##Conclusion
+## Conclusion
 
 This lab demonstrates how computer hardware components connect and how compatibility depends on sockets, chipsets, memory generations and storage interfaces.
 
