@@ -210,15 +210,29 @@ My laptop runs Windows as its main operating system, and I use a Linux virtual m
 
 I was unable to demonstrate the macOS commands directly because I do not have enough free storage space on my laptop to install an additional macOS virtual machine. Most of the available storage is already being used by the Linux virtual machine.
 
-## Evidence Files
+## Evidence
 
-Save the actual command output in these files:
+### Linux Specifications
+- [Linux Evidence Folder](evidence/linux-specs/)
+- [free -h](evidence/linux-specs/free-h.png)
+- [lsblk -o NAME,MODEL,SIZE,TYPE](<evidence/linux-specs/lsblk -o NAME,MODEL,SIZE,TYPE.png>)
+- [lscpu](evidence/linux-specs/lscpu.png)
+- [sudo dmidecode -t memory](<evidence/linux-specs/sudo dmidecode -t memory.png>)
 
-evidence/windows-specs.txt
-evidence/linux-specs.txt
-evidence/macos-specs.txt (if a Mac is available)
+### Windows Specifications
+- [Windows Specifications](evidence/windows-specs.txt)
 
-The output must be generated on the actual machines.
+### Component Photos
+- [AMD Ryzen 5 7600](evidence/photos/amd-ryzen-5-7600.jpg)
+- [AMD Wraith Stealth](evidence/photos/amd-wraith-stealth.jpg)
+- [ASUS Prime B650M-A](evidence/photos/asus-prime-b650m-a.jpg)
+- [Corsair RM750e](evidence/photos/corsair-rm750e.jpg)
+- [Crucial DDR4-3200](evidence/photos/crucial-ddr4-3200.jpg)
+- [Intel Core i5-13400](evidence/photos/intel-core-i5-13400.jpg)
+- [Kingston Fury Beast DDR5](evidence/photos/kingston-fury-beast-ddr5.jpg)
+- [MSI PRO B760M-A WIFI DDR4](evidence/photos/msi-pro-b760m-a-wifi-ddr4.jpg)
+- [Samsung 870 EVO](evidence/photos/samsung-870-evo.jpg)
+- [Samsung 990 PRO](evidence/photos/samsung-990-pro.jpg)
 
 ## Conclusion
 
