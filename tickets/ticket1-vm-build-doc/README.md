@@ -103,6 +103,30 @@ A dynamic disk uses physical storage as the guest requires it. A fixed-size disk
 
 The trade-off is that dynamic disks can grow over time, so the host must have sufficient free disk space.
 
+Hypervisor Licensing
+
+Oracle VirtualBox is free to use as an open-source virtualization platform under the GNU General Public License (GPL) for its base package. The separate Oracle VirtualBox Extension Pack has different licensing terms and must be considered separately.
+
+For this lab, I use the standard VirtualBox functionality and do not assume that every optional extension is freely licensed for every type of use.
+
+Before deployment in a workplace, the organization should check the applicable VirtualBox and Extension Pack licensing terms.
+
+Designing for a Non-Technical User
+
+The instructions are intended for Aigerim, an office manager who may not have previous experience with virtualization.
+
+Therefore, the build documentation should not assume that the reader understands terms such as NAT Network, virtual disk allocation, EFI, TPM or snapshots.
+
+Each technical step should include:
+
+The exact VirtualBox menu or setting to open.
+The value that must be selected.
+A screenshot showing the expected configuration.
+A short explanation of why the setting is necessary.
+A verification step to confirm that the operation succeeded.
+
+This makes the procedure reproducible by a non-IT employee rather than requiring additional technical assistance.
+
 3. What I Did
 3.1 Host Inventory
 
@@ -124,7 +148,7 @@ I did not invent a disk capacity because the available physical disk space was n
 I created and tested the Ubuntu Server VM during Lab 1 on my own computer.
 
 VM Configuration
-Setting	Configuration
+Setting	Configuration 
 VM name	lab01-ubuntu
 Operating system	Ubuntu Server 26.04.1 LTS
 CPU	1 vCPU
@@ -140,7 +164,7 @@ Installed Oracle VirtualBox.
 Created the lab01-ubuntu virtual machine.
 Allocated 1 vCPU and 2 GB RAM.
 Created a 25 GB dynamically allocated virtual disk.
-Configured NAT networking.
+Configured NAT Network
 Installed Ubuntu Server 26.04.1 LTS.
 Booted the guest and checked its operating system information.
 Tested system recovery using a snapshot.
@@ -259,6 +283,31 @@ These problems demonstrate why network connectivity must be tested rather than a
 
 The Lab 2 results are reference material because the exercise was performed on my partner's machine.
 
+Updated Network Configuration
+
+The original Ubuntu VM was initially configured with standard NAT networking during Lab 1.
+
+For Ticket 1, I subsequently changed the adapter configuration to a shared NAT Network.
+
+I captured updated evidence of the NAT Network configuration.
+
+The final network configuration must be verified by checking that both Ubuntu and Windows use the same NAT Network profile. A configuration screenshot alone does not prove that communication between the guests works.
+
+Network Verification Status
+
+The NAT Network configuration has been updated and documented.
+
+However, successful connectivity has not yet been demonstrated by actual ping output.
+
+The following tests remain necessary:
+
+Ubuntu to Windows using the Windows guest IP address.
+Windows to Ubuntu using the Ubuntu guest IP address.
+Ubuntu to an external internet address.
+Windows to an external internet address.
+
+The results must be recorded with the actual command output. Failed tests must also be documented rather than presented as successful.
+
 3.6 Snapshots and Recovery
 
 Snapshots are necessary because the purpose of the environment is to allow a developer to experiment without permanently damaging the guest installation.
@@ -278,14 +327,34 @@ The Lab 1 snapshot timing problem showed why this sequence matters.
 
 A snapshot created after a destructive modification cannot restore the system to a state that existed before that modification.
 
+Rollback Procedure — Restoring a Clean Snapshot
+
+If a developer makes unwanted changes or the guest operating system becomes unstable, the virtual machine can be restored to its clean snapshot.
+
+The recovery procedure is:
+
+Shut down the virtual machine completely.
+Open Oracle VirtualBox Manager.
+Select the virtual machine that needs recovery.
+Open the Snapshots view.
+Select the snapshot named clean-install.
+Choose Restore.
+Confirm the restoration. If necessary, save the current state as a separate snapshot before restoring.
+Start the virtual machine.
+Verify that the operating system boots correctly and that the initial configuration has been restored.
+
+Important: Restoring a snapshot discards changes made after that snapshot, unless they were saved separately. The user should back up important work before performing rollback.
+
+This procedure must be repeated separately for Ubuntu and Windows because each guest has its own snapshots.
+
 4. Evidence
 
 The evidence is divided into files collected on my own computer, files available in the Ticket 1 folder and reference material from my partner's Lab 2.
 
-4.1 Ticket 1 Evidence
+4.1 Ticket 1 Evidence — My Own Computer
 File	What it proves
-evidence/04-guest-uname.txt	Records Ubuntu system and kernel information.
-evidence/05-ping-between-guests.txt	Records the network connectivity tests. The actual output must show the relevant successful tests to prove connectivity.
+evidence/04-guest-uname.txt	Records Ubuntu system and kernel information using uname -a and distribution information using lsb_release -a.
+evidence/05-ping-between-guests.txt	Intended to record network connectivity tests. Actual ping commands and their output are still required to prove connectivity.
 4.2 Existing Lab 1 Evidence — My Own Computer
 File	What it proves
 labs/lab01-first-vm/evidence/vm-settings.png	Shows the CPU, RAM and virtual disk configuration of my Ubuntu VM.
@@ -310,11 +379,18 @@ The following evidence is still necessary for a complete Ticket 1 submission:
 Required file	What it must prove
 evidence/01-new-vm-wizard.png	The Windows VM creation wizard and selected operating system.
 evidence/02-disk-settings.png	The Windows VM disk size and dynamic allocation.
-evidence/03-network-adapter.png	Both guests connected to the same NAT Network.
-evidence/06-snapshot-list.png	Clean snapshots for both guests.
+Windows VM installation screenshot	Shows that Windows 11 Enterprise Evaluation is installed and running on my own computer.
+Windows network adapter screenshot	Shows that Windows is connected to the same NAT Network as Ubuntu.
+Windows guest IP configuration	Records the Windows guest IP address on my own computer.
+Actual ping test results	Demonstrates communication between Ubuntu and Windows and internet connectivity.
+Windows clean snapshot screenshot	Shows the Windows snapshot named clean-install.
+evidence/06-snapshot-list.png	Shows the clean snapshots for both guests.
 
-These files must be collected from the actual VM configuration. Existing Lab 1 and Lab 2 screenshots must not be renamed or presented as new Ticket 1 evidence.
+The NAT Network configuration for Ubuntu has already been updated and documented in 03-network-adapter.png.
 
+The remaining Windows screenshots and connectivity evidence must be collected from the actual VM configuration on my own computer.
+
+Existing Lab 1 and Lab 2 screenshots must not be renamed or presented as new Ticket 1 evidence.
 5. What I Would Do Differently
 
 First, I would record the available physical disk space before selecting virtual disk sizes. In Lab 1, I recorded CPU and RAM but did not record the available disk capacity. This leaves an important part of the resource calculation incomplete.
