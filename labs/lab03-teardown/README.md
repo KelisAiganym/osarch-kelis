@@ -212,17 +212,17 @@ I was unable to demonstrate the macOS commands directly because I do not have en
 
 ## Evidence
 
-### Linux Specifications
+Linux Specifications
 - [Linux Evidence Folder](evidence/linux-specs/)
 - [free -h](evidence/linux-specs/free-h.png)
 - [lsblk -o NAME,MODEL,SIZE,TYPE](<evidence/linux-specs/lsblk -o NAME,MODEL,SIZE,TYPE.png>)
 - [lscpu](evidence/linux-specs/lscpu.png)
 - [sudo dmidecode -t memory](<evidence/linux-specs/sudo dmidecode -t memory.png>)
 
-### Windows Specifications
+Windows Specifications
 - [Windows Specifications](evidence/windows-specs.txt)
 
-### Component Photos
+Component Photos
 - [AMD Ryzen 5 7600](evidence/photos/amd-ryzen-5-7600.jpg)
 - [AMD Wraith Stealth](evidence/photos/amd-wraith-stealth.jpg)
 - [ASUS Prime B650M-A](evidence/photos/asus-prime-b650m-a.jpg)
