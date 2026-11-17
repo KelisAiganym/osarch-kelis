@@ -60,15 +60,12 @@ printf '\357\273\277' | cat - "$out" > tmp && mv tmp "$out"   # 3. add UTF-8 BOM
 
 Evidence
 
-All evidence files are stored in the evidence/ directory inside labs/lab05-encoding/.
-
-Evidence folder — complete collection of original files, conversion results, diagnostic outputs, and screenshots.
-Original CSV — original file, preserved unchanged.
-Fixed CSV — converted UTF-8 file with BOM and CRLF line endings.
-File before conversion — original file type and line-ending identification.
-Hex dump before conversion — original bytes used to identify the encoding and check for a BOM.
-Diagnosis — complete encoding diagnosis recorded before conversion.
-File after conversion — file identification and hexadecimal output after conversion.
-Verification screenshot — screenshot showing the fixed file correctly displayed in Excel, LibreOffice Calc, and Linux Terminal.
-Conversion script — reproducible script used to convert KZ-1048 to UTF-8.
-.gitattributes — prevents Git from automatically modifying CSV line endings.
+    evidence/staff-broken.csv — original CSV file, preserved without modifications.
+    evidence/staff-fixed.csv — converted UTF-8 CSV file with BOM and CRLF line endings.
+    evidence/file-before.txt — original file identification and detected line endings.
+    evidence/hexdump-before.txt — hexadecimal dump used to identify the source encoding, BOM status, and byte patterns.
+    evidence/diagnosis.txt — complete encoding diagnosis recorded before conversion.
+    evidence/file-after.txt — file identification and hexadecimal output after conversion.
+    evidence/opens-correctly.png — screenshot showing the fixed CSV correctly displayed in Microsoft Excel, LibreOffice Calc, and Linux Terminal.
+    scripts/fix.sh — reproducible conversion script using iconv and a UTF-8 BOM.
+    .gitattributes — prevents Git from automatically modifying CSV line endings.
