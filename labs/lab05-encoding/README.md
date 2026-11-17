@@ -57,3 +57,14 @@ printf '\357\273\277' | cat - "$out" > tmp && mv tmp "$out"   # 3. add UTF-8 BOM
 1. **Windows-1251 looked right, but was wrong.** The bytes matched Windows-1251 for Russian letters (а = E0, я = FF), and `iconv -f WINDOWS-1251` ran without a single error. Russian words were perfect, but Kazakh names came out as "Јбдірахманова", "Ќасымов", "Нўрлан". Byte `A3` is "Ј" in Windows-1251 and "Ә" in KZ-1048. A conversion with no error message does not prove the encoding is right; I had to check a Kazakh letter.
 2. **Screenshot of the wrong file.** For my first verification screenshot, LibreOffice had `staff-broken.csv` open (with its default Windows-1251), not `staff-fixed.csv`. At first glance it looked fine, because most of the text is Russian. But "Өмірзақова" and "Өскемен" showed as "Ґмірзақова" and "Ґскемен", and the window title showed the wrong file name. I re-took the screenshot with `staff-fixed.csv` opened as UTF-8.
 3. **fish is not bash.** My shell is fish, where the guide's `{ …; } > file` syntax does not work. I used `begin; …; end > file` to save the commands together with their output.
+
+evidence/ — complete folder containing the original file, converted file, diagnostic output, and verification screenshot.
+evidence/staff-broken.csv — original file, preserved unchanged.
+evidence/staff-fixed.csv — converted UTF-8 file with BOM and CRLF line endings.
+evidence/file-before.txt — original file type and line-ending identification.
+evidence/hexdump-before.txt — original bytes used to identify the encoding and check for a BOM.
+evidence/diagnosis.txt — complete diagnosis written before conversion.
+evidence/file-after.txt — file identification and hexadecimal output after conversion.
+evidence/opens-correctly.png — screenshot proving correct display in Excel, LibreOffice Calc, and Linux Terminal.
+scripts/fix.sh — reproducible conversion script.
+.gitattributes — prevents Git from automatically modifying CSV line endings.
