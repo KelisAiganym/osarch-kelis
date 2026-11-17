@@ -58,13 +58,15 @@ printf '\357\273\277' | cat - "$out" > tmp && mv tmp "$out"   # 3. add UTF-8 BOM
 2. **Screenshot of the wrong file.** For my first verification screenshot, LibreOffice had `staff-broken.csv` open (with its default Windows-1251), not `staff-fixed.csv`. At first glance it looked fine, because most of the text is Russian. But "Өмірзақова" and "Өскемен" showed as "Ґмірзақова" and "Ґскемен", and the window title showed the wrong file name. I re-took the screenshot with `staff-fixed.csv` opened as UTF-8.
 3. **fish is not bash.** My shell is fish, where the guide's `{ …; } > file` syntax does not work. I used `begin; …; end > file` to save the commands together with their output.
 
-Evidence
+## Evidence
 
-    evidence/staff-broken.csv — original CSV file, preserved without modifications.
-    evidence/staff-fixed.csv — converted UTF-8 CSV file with BOM and CRLF line endings.
-    evidence/file-before.txt — original file identification and detected line endings.
-    evidence/hexdump-before.txt — hexadecimal dump used to identify the source encoding, BOM status, and byte patterns.
-    evidence/diagnosis.txt — complete encoding diagnosis recorded before conversion.
-    evidence/file-after.txt — file identification and hexadecimal output after conversion.
-    evidence/opens-correctly.png — screenshot showing the fixed CSV correctly displayed in Microsoft Excel, LibreOffice Calc, and Linux Terminal.
-    scripts/fix.sh — reproducible conversion script using iconv and a UTF-8 BOM.
+- [Evidence folder](https://github.com/KelisAiganym/osarch-kelis/tree/main/labs/lab05-encoding/evidence)
+- [Original CSV — staff-broken.csv](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/staff-broken.csv)
+- [Fixed CSV — staff-fixed.csv](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/staff-fixed.csv)
+- [File before conversion](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/file-before.txt)
+- [Hex dump before conversion](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/hexdump-before.txt)
+- [Encoding diagnosis](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/diagnosis.txt)
+- [File after conversion](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/file-after.txt)
+- [Verification screenshot](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/evidence/opens-correctly.png)
+- [Conversion script — fix.sh](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/scripts/fix.sh)
+- [.gitattributes](https://github.com/KelisAiganym/osarch-kelis/blob/main/labs/lab05-encoding/.gitattributes)
