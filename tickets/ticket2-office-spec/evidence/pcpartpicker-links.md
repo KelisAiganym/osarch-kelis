@@ -11,7 +11,7 @@ Checks:
 - PSU wattage
 
 ## Build 2 — Sales
-Link: PASTE_YOUR_SAVED_PC_PART_PICKER_LINK_HERE
+Link: [https://pcpartpicker.com/list/T6fCMF](https://pcpartpicker.com/list/T6fCMF)
 
 Checks:
 - AM4 CPU and motherboard socket
