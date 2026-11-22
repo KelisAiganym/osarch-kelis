@@ -170,7 +170,5 @@ Your colleague deleted the wrong file from the mirror an hour ago. Does RAID 1 h
 No, RAID 1 does not help. The mirror copies every write to both disks at the same moment, so the deletion happened on `sdb1` and `sdd1` together, and there is no older copy anywhere in the array to go back to. RAID protects against a disk failing, as in this lab, while only a backup (a separate copy from an earlier point in time, stored apart from the array) can bring back a file that a person deleted or overwrote.
  
 ## What did not work the first time
- 
-What did not work the first time
 
 I had a few problems during the lab. First, my checksums did not match because I accidentally recreated the test files. I also saved the initial disk layout too late. Another issue occurred when pasting commands into the terminal, which caused a syntax error. After correcting these mistakes and repeating the steps, everything worked as expected.
