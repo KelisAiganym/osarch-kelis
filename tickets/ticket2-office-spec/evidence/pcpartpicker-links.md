@@ -20,7 +20,7 @@ Checks:
 - PSU wattage
 
 ## Build 3 — Web Developer
-Link: PASTE_YOUR_SAVED_PC_PART_PICKER_LINK_HERE
+Link: [https://pcpartpicker.com/list/XdQxV4](https://pcpartpicker.com/list/XdQxV4)
 
 Checks:
 - AM5 CPU and motherboard socket
