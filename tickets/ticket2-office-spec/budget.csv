@@ -1,1 +1,43 @@
 
+role,component,model,price_kzt,source,date
+accountant,CPU,AMD Ryzen 5 5600G OEM,65000,https://pcmaster.kz/p116420409-amd-ryzen-5600g.html,2026-11-22
+accountant,Motherboard,MSI B550M PRO-VDH,50107,https://kaspi.kz/shop/c/motherboards/,2026-11-22
+accountant,Memory,Kingston DDR4 16GB KF432C16BB1/16,98222,https://kaspi.kz/shop/c/ram/,2026-11-22
+accountant,SSD,Kingston NV3 1TB NVMe,95708,https://alser.kz/taldykorgan/c/ssd/f/obem-ssd-nakopitelya/1000-gb,2026-11-22
+accountant,PSU,Deepcool PF550 550W,22266,https://kaspi.kz/shop/c/power%20supplies/all/,2026-11-22
+accountant,Case,PCcooler C3 B310,15980,https://kaspi.kz/shop/Balpyk-Bi/c/computer%20cases/,2026-11-22
+accountant,Cooler,Deepcool AG400,14606,https://www.sulpak.kz/g/sistemiy-ohlazhdeniya-deepcool-1338-76,2026-11-22
+accountant,Monitor,Xiaomi A24i 24 IPS,45990,https://www.technodom.kz/catalog/noutbuki-i-komp-jutery/komp-jutery-i-monitory/monitory,2026-11-22
+accountant,OS,Windows 11 Pro OEM,39600,https://skysoft.kz/product-category/windows/windows-11/,2026-11-22
+accountant,TOTAL,Accountant workstation,447479,calculated,2026-11-22
+sales,CPU,AMD Ryzen 5 5600G OEM,65000,https://pcmaster.kz/p116420409-amd-ryzen-5600g.html,2026-11-22
+sales,Motherboard,MSI B550M PRO-VDH,50107,https://kaspi.kz/shop/c/motherboards/,2026-11-22
+sales,Memory,Kingston DDR4 32GB 2x16 KF432C16BB1K2/32,168500,https://kaspi.kz/shop/c/ram/,2026-11-22
+sales,SSD,Kingston NV3 1TB NVMe,95708,https://alser.kz/taldykorgan/c/ssd/f/obem-ssd-nakopitelya/1000-gb,2026-11-22
+sales,PSU,Deepcool PF550 550W,22266,https://kaspi.kz/shop/c/power%20supplies/all/,2026-11-22
+sales,Case,PCcooler C3 B310,15980,https://kaspi.kz/shop/Balpyk-Bi/c/computer%20cases/,2026-11-22
+sales,Cooler,Deepcool AG400,14606,https://www.sulpak.kz/g/sistemiy-ohlazhdeniya-deepcool-1338-76,2026-11-22
+sales,Monitor,Xiaomi A24i 24 IPS,45990,https://www.technodom.kz/catalog/noutbuki-i-komp-jutery/komp-jutery-i-monitory/monitory,2026-11-22
+sales,OS,Windows 11 Pro OEM,39600,https://skysoft.kz/product-category/windows/windows-11/,2026-11-22
+sales,TOTAL,Sales workstation,517757,calculated,2026-11-22
+web_developer,CPU,AMD Ryzen 7 7700 BOX,179505,https://www.over-shop.kz/catalog/komplektuyushchie_pk/protsessory/protsessory_amd/59317/,2026-11-22
+web_developer,Motherboard,Gigabyte B650M D3HP,75890,https://kaspi.kz/shop/c/motherboards/,2026-11-22
+web_developer,Memory,Kingston DDR5 32GB KF556C36BBEAK2-32,334982,https://kaspi.kz/shop/c/ram/,2026-11-22
+web_developer,SSD,Kingston NV3 1TB NVMe,95708,https://alser.kz/taldykorgan/c/ssd/f/obem-ssd-nakopitelya/1000-gb,2026-11-22
+web_developer,PSU,Deepcool PF650 650W,26000,https://kaspi.kz/shop/c/power%20supplies/all/,2026-11-22
+web_developer,Case,PCcooler C3 B310,15980,https://kaspi.kz/shop/Balpyk-Bi/c/computer%20cases/,2026-11-22
+web_developer,Monitor,Xiaomi A24i 24 IPS,45990,https://www.technodom.kz/catalog/noutbuki-i-komp-jutery/komp-jutery-i-monitory/monitory,2026-11-22
+web_developer,OS,Ubuntu 24.04 LTS,0,https://ubuntu.com/download/desktop,2026-11-22
+web_developer,TOTAL,Developer workstation,774055,calculated,2026-11-22
+designer,CPU,AMD Ryzen 5 5600 OEM,63389,https://kaspi.kz/shop/c/cpus/all/,2026-11-22
+designer,Motherboard,MSI B550M PRO-VDH,50107,https://kaspi.kz/shop/c/motherboards/,2026-11-22
+designer,Memory,Kingston DDR4 32GB 2x16 KF432C16BB1K2/32,168500,https://kaspi.kz/shop/c/ram/,2026-11-22
+designer,SSD,Kingston NV3 1TB NVMe,95708,https://alser.kz/taldykorgan/c/ssd/f/obem-ssd-nakopitelya/1000-gb,2026-11-22
+designer,GPU,Palit GeForce RTX 5060 Dual 8GB,300000,https://kaspi.kz/shop/c/videocards/all/,2026-11-22
+designer,PSU,Deepcool PF650 650W,26000,https://kaspi.kz/shop/c/power%20supplies/all/,2026-11-22
+designer,Case,PCcooler C3 B310,15980,https://kaspi.kz/shop/Balpyk-Bi/c/computer%20cases/,2026-11-22
+designer,Cooler,Deepcool AG400,14606,https://www.sulpak.kz/g/sistemiy-ohlazhdeniya-deepcool-1338-76,2026-11-22
+designer,Monitor,Xiaomi G27Qi 27 QHD IPS,109990,https://www.technodom.kz/catalog/noutbuki-i-komp-jutery/komp-jutery-i-monitory/monitory,2026-11-22
+designer,OS,Windows 11 Pro OEM,39600,https://skysoft.kz/product-category/windows/windows-11/,2026-11-22
+designer,TOTAL,Designer workstation,883880,calculated,2026-11-22
+
