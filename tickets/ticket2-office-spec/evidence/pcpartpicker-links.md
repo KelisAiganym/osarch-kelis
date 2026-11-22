@@ -29,7 +29,7 @@ Checks:
 - PSU wattage
 
 ## Build 4 — Designer
-Link: PASTE_YOUR_SAVED_PC_PART_PICKER_LINK_HERE
+Link:[https://pcpartpicker.com/list/T4WwCw](https://pcpartpicker.com/list/T4WwCw)
 
 Checks:
 - AM4 CPU and motherboard socket
