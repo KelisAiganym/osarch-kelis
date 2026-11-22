@@ -2,7 +2,7 @@
 # PCPartPicker Compatibility Evidence
 
 ## Build 1 — Accountant
-Link: PASTE_YOUR_SAVED_PC_PART_PICKER_LINK_HERE
+Link:[https://pcpartpicker.com/list/TZ79R4](https://pcpartpicker.com/list/TZ79R4)
 
 Checks:
 - AM4 CPU and motherboard socket
