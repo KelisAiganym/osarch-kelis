@@ -171,8 +171,6 @@ No, RAID 1 does not help. The mirror copies every write to both disks at the sam
  
 ## What did not work the first time
  
-1. **The checksums did not match.** On the first attempt I ran the step that creates `proof.txt` and `random.bin` again after taking `checksum-before.txt`. Each run writes a new date and new random bytes, so the "before" and "after" sums came from different files, and the evidence showed a mismatch even though no data was lost. Fix: I tore the array down and repeated the whole experiment, creating the files exactly once.
-2. **`lsblk-before.txt` was taken too late.** It already showed the partitions and `md0`, not three empty disks. Fix: before the second attempt I stopped the array (`mdadm --stop`), erased the RAID superblocks (`mdadm --zero-superblock`) and partition tables (`wipefs -a`), removed the old array from `/etc/mdadm/mdadm.conf`, rebooted, and only then saved `lsblk-before.txt`.
-3. **Erasing the partition table did not erase the data.** On the second attempt `mkfs.ext4` warned that `/dev/md0` already contained an ext4 file system labelled `mirror` from the first attempt. `wipefs` only removed the signatures at the start of the disks; the new partitions and array started at the same offsets, so the old file system was still there. I answered `y` to overwrite it.
-4. **Pasting a multi-line loop failed.** The terminal inserted `^[[200~` (bracketed paste) before the `for` loop, so bash saw a syntax error and the next line ran with an empty `$d`, as `parted /dev/`. It failed safely. Fix: `bind 'set enable-bracketed-paste off'` and pasting the loop as a single line.
-5. **The Windows VM would not start** (`VERR_FILE_NOT_FOUND` for `lab04-win.vdi`). The disk file had been moved to the host's trash. Fix: restored it from `~/.local/share/Trash/files/` to the VM folder.
+What did not work the first time
+
+I had a few problems during the lab. First, my checksums did not match because I accidentally recreated the test files. I also saved the initial disk layout too late. Another issue occurred when pasting commands into the terminal, which caused a syntax error. After correcting these mistakes and repeating the steps, everything worked as expected.
